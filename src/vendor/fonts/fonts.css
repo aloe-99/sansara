@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "lemon-tuesday";
+  src: url("./lemon-tuesday.woff2") format("woff2"),
+    url("./lemon-tuesday.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ossem Rounded";
+  src: url("./ossem-rounded.woff2") format("woff2"),
+    url("./ossem-rounded.woff") format("woff");
+}

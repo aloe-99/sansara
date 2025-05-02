@@ -1,0 +1,12 @@
+.task {
+  background-color: #282d31;
+  padding: 5px;
+  margin: 3px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid green;
+}
+
+.task__text {
+  font-size: 20px;
+}

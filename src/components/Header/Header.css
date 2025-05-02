@@ -1,0 +1,56 @@
+.header {
+  width: 60%;
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  transition: width 0.5s ease-in-out 0.1s;
+}
+
+.header--long {
+  width: 90%;
+}
+
+.header__box {
+  padding: 10px 0;
+  display: flex;
+  align-content: end;
+  text-decoration: none;
+  color: #e0e0e0;
+}
+
+.header__box:hover > .header__logo-icon {
+  animation: rotate 20s linear infinite;
+  transform-origin: center;
+}
+
+.header__logo-icon {
+  width: 60px;
+  margin: 0 3px 0 0;
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header__logo-label {
+  color: #d9193c;
+  font-size: 35px;
+  font-family: "lemon-tuesday", Arial, sans-serif;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+.header__profile-photo {
+  width: 60px;
+  margin: 0 0 0 3px;
+}
