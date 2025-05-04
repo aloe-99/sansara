@@ -1,18 +1,24 @@
+import { useEffect } from 'react';
 import Card from '../Card/Card';
 
 export default function ProjectsList(props) {
-  const projectsData = props.data;
+  const initData = props.data;
 
-  function renderProjectCard(item) {
-    const img = item.img;
-    return (<Card projectName={item.name} projectImage={img} key={item.key} />);
-  }
+
+  // useEffect(() => {
+  //   projectsData.map((item) => {
+  //     return console.log(item['project-1'].name)
+  //   })
+  // }, [])
 
   return (
     <ul className="project-list">
-      {projectsData.map(project => {
-        return renderProjectCard(project);
-      })}
+      {
+        initData.projectOrder.map(projectId => {
+          const project = initData.projects[projectId]
+          return <Card projectId={project.id} projectName={project.name} projectImage={project.img} key={project.key} />;
+        })
+      }
     </ul>
   );
 }
