@@ -1,0 +1,170 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.section {
+  margin: 10px 0;
+  padding: 100px 70px;
+  color: #e0e0e0;
+  box-sizing: border-box;
+}
+
+.section__header {
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: -2px;
+  font-weight: 400;
+  line-height: 1.16;
+  width: 60%;
+  margin: 160px auto;
+}
+
+.section__title {
+  letter-spacing: -2px;
+  font-weight: 400;
+  font-size: 22px;
+  width: 100%;
+  margin-bottom: 23px;
+}
+
+.section__subtitle {
+  text-align: center;
+  max-width: 460px;
+  margin: 26px auto 0;
+}
+
+.section__hr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section__hr_dark {
+  border-bottom: 1px solid #424242;
+}
+
+.section__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto 110px;
+}
+
+.section__grid-bar {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  text-align: center;
+}
+
+.section__container-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 70px;
+}
+
+.section__cards-row {
+  display: flex;
+  margin: 150px auto 0;
+  justify-content: center;
+}
+
+.section__text {
+  color: #e0e0e0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.section__card {
+  cursor: pointer;
+  width: 96px;
+  background-color: #303030;
+  border-radius: 10px;
+  line-height: 2.5;
+  text-align: center;
+  align-items: center;
+  margin: 0 5px;
+}
+
+.section__card_big {
+  padding: 10px 0;
+  width: 90px;
+}
+
+.section__text_center {
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .section {
+    padding: 90px 50px;
+  }
+
+  .section__header {
+    font-size: 40px;
+    width: 88%;
+    margin: 320px;
+  }
+
+  .section__card {
+    min-width: 82px;
+  }
+
+  .section__card_big {
+    min-width: 84px;
+  }
+
+  .section__cards-row {
+    margin-top: 314px;
+  }
+
+  .section__container {
+    column-gap: 30px;
+    margin-bottom: 93px;
+  }
+
+  .section__text {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .section__text {
+    font-size: 11px;
+  }
+
+  .section__header {
+    font-size: 29px;
+    margin-top: 220px;
+  }
+
+  .section__title {
+    font-size: 18px;
+  }
+
+  .section__cards-row {
+    margin-top: 212px;
+  }
+
+  .section__card {
+    width: 96px;
+  }
+
+  .section__container {
+    grid-template-columns: auto;
+    margin-bottom: 60px;
+  }
+
+  .section__container-title {
+    font-size: 18px;
+    margin-top: 60px;
+  }
+}

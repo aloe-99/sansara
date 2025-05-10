@@ -1,15 +1,16 @@
 import { useDrag } from "react-dnd";
 
 export default function Task(props) {
-  const { key, task, onDragEnd } = props;
+  const { task, onDragEnd } = props;
 
   const [{ isDragging }, drag] = useDrag(() => ({
     type: 'TASK',
-    item: { key, task },
+    item: { task }, // Передаем всю задачу
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult();
-      if (dropResult) {
-        onDragEnd(item.task.id, dropResult.targetListId);
+      if (dropResult && item.task.listId !== dropResult.targetListId) {
+        console.log(`${item.task.projectID} ${item.task._id}`);
+        onDragEnd(item.task.projectID, item.task._id, dropResult.targetListId); // Вызываем колбэк
       }
     },
     collect: (monitor) => ({
@@ -18,9 +19,15 @@ export default function Task(props) {
   }));
 
   return (
-    <li className="task" ref={drag}
-      style={{ opacity: isDragging ? 0 : 1, cursor: isDragging ? "grabbing" : "grab" }}>
-      <p className="task__text">{task.content}</p>
+    <li
+      ref={drag}
+      className="task"
+      style={{
+        opacity: isDragging ? 0.5 : 1,
+        cursor: 'grab',
+      }}
+    >
+      <p className="task__text">{task.text}</p>
     </li>
-  )
+  );
 }

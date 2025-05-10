@@ -1,6 +1,36 @@
+.form__logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration-line: none;
+}
+
 .form__logo {
   width: 38px;
   align-self: flex-start;
+  animation: rotate 10s linear infinite;
+  transform-origin: center;
+}
+
+.form__logo-container:hover > .form__logo {
+  animation: rotate 20s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form__logo-label {
+  text-decoration-line: none;
+  color: #d9193c;
+  font-size: 30px;
+  font-family: "lemon-tuesday", Arial, sans-serif;
+  font-weight: bold;
 }
 
 .form {
@@ -14,7 +44,7 @@
 
 .form__title {
   color: #fff;
-  align-self: flex-start;
+  align-self: center;
   font-size: 24px;
   font-weight: 500;
   margin: 40px 0;
@@ -75,7 +105,7 @@
   width: 100%;
   min-height: 12px;
   max-height: 30px;
-  color: #ee3465;
+  color: #d9193c;
   font-size: 10px;
   margin: 6px 0;
 }
@@ -89,7 +119,7 @@
 }
 
 .form__input:invalid {
-  color: #ee3465;
+  color: #d9193c;
 }
 
 .form__input_underline_disable {
@@ -98,7 +128,7 @@
 
 .form__btn {
   color: #fff;
-  background-color: #4285f4;
+  background-color: #d9193c;
   width: 100%;
   font-weight: 500;
   border: none;
@@ -124,18 +154,18 @@
 }
 
 .form__text_color_red {
-  color: #ee3465;
+  color: #d9193c;
 }
 
 .form__link {
-  color: #4285f4;
+  color: #d9193c;
   text-decoration: none;
   margin-left: 6px;
 }
 
 .form__input:focus {
   outline: 0;
-  border-bottom: 1px solid #4285f4;
+  border-bottom: 1px solid #d9193c;
 }
 
 @media screen and (max-width: 600px) {

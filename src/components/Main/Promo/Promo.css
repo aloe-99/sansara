@@ -1,0 +1,23 @@
+.promo {
+  background-color: #d9193c;
+  border-radius: 10px;
+  padding: 30px 0 30px;
+  width: 94%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promo__link {
+  color: #e0e0e0;
+  text-decoration: none;
+  background-color: #282d31;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .promo {
+    padding: 0 0 22px;
+  }
+}

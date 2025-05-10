@@ -1,36 +1,30 @@
 import { useDrop } from 'react-dnd';
-
-import Task from '../Task/Task'
-import { useEffect } from 'react';
-
+import Task from '../Task/Task';
 
 export default function List(props) {
-  const { list, tasks, onTaskMove } = props;
+  const { title, tasks, onTaskMove, listId } = props;
 
-  // useEffect(() => {
-  //   console.log(list);
-  // }, []);
-
+  // Настройка области для дропа
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'TASK',
-    drop: (item) => {
-      return {
-        targetListId: list.id,
-        movedTaskId: item.task.id
-      };
-    },
+    drop: (item) => ({
+      targetListId: listId, // ID списка, куда перенесли задачу
+    }),
     collect: (monitor) => ({
       isOver: !!monitor.isOver(),
     }),
   }));
 
   return (
-    <div className="project__container">
-      <h3 className="container__title">{list.title}</h3>
-      <ul className="container__task-list" ref={drop}>
-        {tasks.map((task) => {
-          return <Task key={task.id} task={task} onDragEnd={onTaskMove} />
-        })}
+    <div
+      ref={drop}
+      className="project__container"
+    >
+      <h3 className="container__title">{title}</h3>
+      <ul className="container__task-list">
+        {tasks.map((task) => (
+          <Task key={task._id} task={task} onDragEnd={onTaskMove} />
+        ))}
       </ul>
     </div>
   );

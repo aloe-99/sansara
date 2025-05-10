@@ -5,6 +5,7 @@
   justify-content: space-between;
   margin: 20px 0;
   transition: width 0.5s ease-in-out 0.1s;
+  z-index: 2;
 }
 
 .header--long {
@@ -15,6 +16,7 @@
   padding: 10px 0;
   display: flex;
   align-content: end;
+  align-items: center;
   text-decoration: none;
   color: #e0e0e0;
 }
