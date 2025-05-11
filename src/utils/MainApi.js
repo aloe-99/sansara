@@ -25,12 +25,39 @@ class MainApi {
       .then(this._checkResponse);
   }
 
+  postList(data) {
+    return fetch(`${this.baseUrl}/projects/${data.projectID}`, {
+      method: 'POST',
+      headers: this._injectBearerToken(this.headers),
+      body: JSON.stringify(data)
+    })
+      .then(this._checkResponse);
+  }
+
   getInitialTasks(projectID) {
     return fetch(`${this.baseUrl}/projects/${projectID}/tasks`, {
       headers: this._injectBearerToken(this.headers)
     })
       .then(this._checkResponse);
   }
+
+  postProjectTask({ projectID, listID, text }) {
+    return fetch(`${this.baseUrl}/projects/${projectID}/lists/${listID}`, {
+      method: 'POST',
+      headers: this._injectBearerToken(this.headers),
+      body: JSON.stringify({ text })
+    })
+      .then(this._checkResponse);
+  }
+
+  deleteProjectTask(projectID, taskID) {
+    return fetch(`${this.baseUrl}/projects/${projectID}/tasks/${taskID}`, {
+      method: 'DELETE',
+      headers: this._injectBearerToken(this.headers)
+    })
+      .then(this._checkResponse);
+  }
+
 
   moveTask(projectID, taskID, listID) {
     return fetch(`${this.baseUrl}/projects/${projectID}/tasks/${taskID}`, {

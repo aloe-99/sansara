@@ -9,7 +9,7 @@ import logo from '../../images/logo.svg';
 export default function Header(props) {
 
   const currentUser = useContext(CurrentUserContext);
-  const { loggedIn } = props;
+  const { loggedIn, onAddProjectBtn, onDeleteProject, onAddTask } = props;
 
   const location = useLocation();
 
@@ -19,18 +19,33 @@ export default function Header(props) {
     setIsLong(location.pathname.includes('projects/'));
   }, [location]);
 
+  function checkLocation() {
+    if (location.pathname === '/projects') {
+      return <button className="header__btn link-dissolution" onClick={onAddProjectBtn}>Новый проект</button>;
+    }
+    if (location.pathname.includes('/projects/')) {
+      return (
+        <>
+          <button className="header__btn link-dissolution" onClick={onAddTask}>Добавить задачу</button>
+          <button className="header__btn link-dissolution" onClick={onDeleteProject}>Удалить проект</button>
+        </>
+      );
+    }
+  }
+
   return (
     <header className={`header ${isLong ? 'header--long' : ''}`}>
-      <Link className="header__box link-dissolution" to="/">
+      <Link className="header__box link-dissolution" to="/projects">
         <img className="header__logo-icon" src={logo} alt="logo" />
         <span className="header__logo-label">SANSARA</span>
       </Link>
+      {checkLocation()}
       {loggedIn ?
-        <Link className="header__box link-dissolution" to="/">
+        <Link className="header__box header__box--profile link-dissolution" to="/">
           {currentUser.name}
           {/* <img className="header__profile-photo" src={userPhoto} alt="userPhoto" /> */}
         </Link> :
-        <Link className="header__box link-dissolution" to="/">
+        <Link className="header__box header__box--profile link-dissolution" to="/">
           Войти
         </Link>
       }

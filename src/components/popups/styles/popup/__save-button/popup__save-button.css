@@ -1,0 +1,15 @@
+.popup__save-button {
+  height: 50px;
+  margin-top: 15px;
+  padding: 0;
+  background-color: #282d31;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+  .popup__save-button {
+    height: 46px;
+  }
+}

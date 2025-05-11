@@ -8,7 +8,7 @@ import List from '../List/List';
 export default function Project(props) {
   const lists = props.listsData;
   const tasks = props.tasksData;
-  const { onTaskMove } = props;
+  const { onTaskMove, onDeleteTask } = props;
 
   useEffect(() => {
 
@@ -24,7 +24,7 @@ export default function Project(props) {
             ?
             lists.map((list) => {
               const tasksFiltred = tasks.filter((task) => task.listID === list._id)
-              return <List key={list._id} listId={list._id} title={list.title} tasks={tasksFiltred} onTaskMove={onTaskMove} />
+              return <List key={list._id} listId={list._id} title={list.title} tasks={tasksFiltred} onTaskMove={onTaskMove} onDeleteTask={onDeleteTask} />
             })
             :
             ''

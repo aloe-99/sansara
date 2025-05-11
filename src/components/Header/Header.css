@@ -2,7 +2,8 @@
   width: 60%;
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-start;
   margin: 20px 0;
   transition: width 0.5s ease-in-out 0.1s;
   z-index: 2;
@@ -24,6 +25,10 @@
 .header__box:hover > .header__logo-icon {
   animation: rotate 20s linear infinite;
   transform-origin: center;
+}
+
+.header__box--profile {
+  margin-left: auto;
 }
 
 .header__logo-icon {
@@ -55,4 +60,18 @@
 .header__profile-photo {
   width: 60px;
   margin: 0 0 0 3px;
+}
+
+.header__btn {
+  color: #e0e0e0;
+  background-color: #d9193c;
+  border-radius: 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 80%;
+  margin-right: 15px;
+}
+
+.header__btn:last-child {
+  margin-right: auto;
 }

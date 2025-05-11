@@ -4,8 +4,28 @@
   margin: 3px 0;
   box-sizing: border-box;
   border-radius: 10px;
+  justify-content: space-between;
 }
 
 .task__text {
   font-size: 20px;
+}
+
+.task__delete-btn {
+  background-color: #282d31;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.task__delete-img {
+  width: 10px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.task__delete-img:hover {
+  opacity: 0.3;
+}
+
+.task:hover > .task__delete-btn {
+  opacity: 1;
 }
